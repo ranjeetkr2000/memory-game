@@ -97,6 +97,7 @@ header{
     width: 6rem;
     background-color: white;
     transform-style: preserve-3d;
+    transition: transform 300ms ease-out;
 }
 
 .card:hover{
@@ -119,7 +120,7 @@ header{
 
 .card.flip{
     transform: rotateY(180deg);
-    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-out;
 }
 
 .info{
