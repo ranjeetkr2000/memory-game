@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>Memory game
+  <head>
     <meta charset="UTF-8" />
     <title>Memory Game!</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Memory Game!</h1>
-    <div id="game">
+
+    <section class="hero_section" id="hero_section">
+        <h1>Memory Game !</h1>
+        <button class="btn" id="play_btn">Play</button>
+    </section>
+
+    <section class="game_section" id="game_section">
+        <h2>Let's Play</h2>
+        <div class="cards_container">
+          
+        </div>
+        <div class="info">
+          <button class="btn" id="exit_btn">Exit</button>
+          <div class="scores">
+            <span id="curr_score">Flips: 0</span>
+            <span id="best_score">Best: 0</span>
+          </div>
+          <button class="btn" id="restart_btn">Restart</button>
+        </div>
+    </section>
+
     <script src="script.js"></script>
   </body>
 </html>
