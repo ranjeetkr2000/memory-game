@@ -54,6 +54,7 @@ restartBtn.addEventListener("click", () => {
         maxFlipCount = 0;
         noOfFlips = 0;
         updateScore(0);
+        updateBestScore(0);
     }, 0.2 * 1000);
 });
 
