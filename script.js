@@ -18,7 +18,6 @@ playBtn.addEventListener("click", () => {
     let game = document.getElementById("game_section");
     game.style.display = "flex";
 
-    
     removeContainer();
     removeSuccess();
     maxFlipCount = 0;
@@ -27,6 +26,7 @@ playBtn.addEventListener("click", () => {
     gifsArr = shuffle(gifsArr);
     createDivsForGifs(gifsArr);
     updateScore(0);
+    updateBestScore(0);
 });
 
 const exitBtn = document.getElementById("exit_btn");
