@@ -283,17 +283,15 @@ function areYouSure(type){
         removeSuccess();
 
         if(yesButton.classList[1] === "restart"){
-            setTimeout(() => {
-                gifsArr = getAllCards();
-                gifsArr = shuffle(gifsArr);
-                createDivsForGifs(gifsArr);
-        
-                maxFlipCount = 0;
-                noOfFlips = 0;
-                updateScore(0);
-                updateBestScore(0);
-            }, 0.2 * 1000);
-
+            gifsArr = getAllCards();
+            gifsArr = shuffle(gifsArr);
+            createDivsForGifs(gifsArr);
+    
+            maxFlipCount = 0;
+            noOfFlips = 0;
+            updateScore(0);
+            updateBestScore(0);
+            
         } else {
             let home = document.getElementById("hero_section");
             home.style.display = "flex";
