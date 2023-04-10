@@ -3,13 +3,13 @@
 html{
     scroll-behavior: smooth;
     font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 body{
     background: linear-gradient(-45deg, #16222A, #3A6073, #414345, #232526);
 	background-size: 400%;
 	animation: gradient 15s ease infinite;
-    font-family: 'Press Start 2P', cursive;
     color:white;
     display: flex;
     flex-direction: column;
@@ -56,9 +56,10 @@ header{
     padding: 1rem 3rem;
     border:none;
     color:black;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: white;
     border-radius: 2rem;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .btn:hover{
