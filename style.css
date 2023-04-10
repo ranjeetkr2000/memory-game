@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 html{
     scroll-behavior: smooth;
@@ -9,7 +9,7 @@ body{
     background: linear-gradient(-45deg, #16222A, #3A6073, #414345, #232526);
 	background-size: 400%;
 	animation: gradient 15s ease infinite;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     color:white;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,8 @@ header{
 }
 
 .hero_section h1{
-    font-size: 5rem;
+    font-size: 3rem;
+    text-align: center;
 }
 
 .btn{
@@ -70,19 +71,26 @@ header{
 }
 
 .game_section{
+    box-sizing: border-box;
     min-height: 100vh;
     display: none;
     flex-direction: column;
     gap: 1rem;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 5rem;
+    padding: 1rem 5rem;
 }
 
 .game_section h2{
     font-size: 3rem;
 }
 
+.cardsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 .container{
     display: flex;
     gap: 2rem;
@@ -125,18 +133,19 @@ header{
 
 .info{
     display: flex;
-    gap: 2rem;
     align-items: center;
     color: white;
-
+    align-self: stretch;
+    justify-content: space-around;
 }
 
 .scores{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    min-width: 5rem;
+    width: 10rem;
     align-items: center;
+    font-size: 1rem;
 }
 
 .success_div{
@@ -144,5 +153,18 @@ header{
     font-size: 2rem;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+}
+
+#restart_prompt{
+    display: flex;
+    /* position: fixed; */
+    flex-direction: column;
+    align-items:center;
+    gap: 1rem;
+}
+
+.prompt_buttons{
+    display: flex;
     gap: 1rem;
 }

@@ -31,33 +31,19 @@ playBtn.addEventListener("click", () => {
 
 const exitBtn = document.getElementById("exit_btn");
 exitBtn.addEventListener("click", () => {
-    let home = document.getElementById("hero_section");
-    home.style.display = "flex";
-    let game = document.getElementById("game_section");
-    game.style.display = "none";
 
-    removeContainer();
-    removeSuccess(); 
+    document.querySelector(".container").style.display = "none";
+    areYouSure("exit");
+
 });
 
 const restartBtn = document.getElementById("restart_btn");
 restartBtn.addEventListener("click", () => {
 
-    removeContainer();
-    removeSuccess();
-
-    setTimeout(() => {
-        gifsArr = getAllCards();
-        gifsArr = shuffle(gifsArr);
-        createDivsForGifs(gifsArr);
-
-        maxFlipCount = 0;
-        noOfFlips = 0;
-        updateScore(0);
-        updateBestScore(0);
-    }, 0.2 * 1000);
+    document.querySelector(".container").style.display = "none";
+    areYouSure("restart");
+    
 });
-
 
 function getAllCards(len = 12) {
     let gifs = Array(len)
@@ -252,6 +238,74 @@ function removeFromArr(gifToRemove){
     else {
         return;
     }
+}
+
+function areYouSure(type){
+
+    let prevRestartPrompt = document.getElementById("restart_prompt");
+    if (prevRestartPrompt) {
+        prevRestartPrompt.remove();
+    }
+
+    let restartPrompt = document.createElement("div");
+    restartPrompt.id = "restart_prompt";
+
+    let promptMsg = document.createElement("span");
+    promptMsg.className = "prompt_msg";
+    promptMsg.innerText = `Are you sure you want to ${type.toUpperCase()}?`;
+
+    let promptButtons = document.createElement("div");
+    promptButtons.className = "prompt_buttons";
+
+    let yesButton = document.createElement("button");
+    yesButton.classList.add("btn", type);
+    yesButton.id = "yes_btn";
+    yesButton.innerText = "Yes";
+
+    let noButton = document.createElement("button");
+    noButton.className = "btn";
+    noButton.id = "no_btn";
+    noButton.innerText = "No";
+
+    promptButtons.append(yesButton, noButton);
+
+    restartPrompt.append(promptMsg, promptButtons);
+
+    restartPrompt.style.display = "flex";
+
+    cardsContainer.append(restartPrompt);
+
+    yesButton.addEventListener("click", (event) => {
+
+        restartPrompt.remove();
+
+        removeContainer();
+        removeSuccess();
+
+        if(yesButton.classList[1] === "restart"){
+            setTimeout(() => {
+                gifsArr = getAllCards();
+                gifsArr = shuffle(gifsArr);
+                createDivsForGifs(gifsArr);
+        
+                maxFlipCount = 0;
+                noOfFlips = 0;
+                updateScore(0);
+                updateBestScore(0);
+            }, 0.2 * 1000);
+
+        } else {
+            let home = document.getElementById("hero_section");
+            home.style.display = "flex";
+            let game = document.getElementById("game_section");
+            game.style.display = "none";
+        }
+    });
+
+    noButton.addEventListener("click", (event)=>{
+        restartPrompt.remove();
+        document.querySelector(".container").style.display = "";
+    });
 }
 
 function resetCards(){
